@@ -13,29 +13,31 @@ const trusetedServerApp = express();
 
 mainApp.use(morgan('tiny'));
 
+const certPath = process.argv.slice(2)
+
 const mainServerOptions = {
-  key: fs.readFileSync('/Users/kevinkiklee/certs/localhost-key.pem'),
-  cert: fs.readFileSync('/Users/kevinkiklee/certs/localhost.pem'),
+  key: fs.readFileSync(`${certPath}/localhost-key.pem`),
+  cert: fs.readFileSync(`${certPath}/localhost.pem`),
 };
 const advertiserServerOptions = {
-  key: fs.readFileSync('/Users/kevinkiklee/certs/advertiser.localhost-key.pem'),
-  cert: fs.readFileSync('/Users/kevinkiklee/certs/advertiser.localhost.pem'),
+  key: fs.readFileSync(`${certPath}/advertiser.localhost-key.pem`),
+  cert: fs.readFileSync(`${certPath}/advertiser.localhost.pem`),
 };
 const publisherServerOptions = {
-  key: fs.readFileSync('/Users/kevinkiklee/certs/publisher.localhost-key.pem'),
-  cert: fs.readFileSync('/Users/kevinkiklee/certs/publisher.localhost.pem'),
+  key: fs.readFileSync(`${certPath}/publisher.localhost-key.pem`),
+  cert: fs.readFileSync(`${certPath}/publisher.localhost.pem`),
 };
 const dspServerOptions = {
-  key: fs.readFileSync('/Users/kevinkiklee/certs/dsp.localhost-key.pem'),
-  cert: fs.readFileSync('/Users/kevinkiklee/certs/dsp.localhost.pem'),
+  key: fs.readFileSync(`${certPath}/dsp.localhost-key.pem`),
+  cert: fs.readFileSync(`${certPath}/dsp.localhost.pem`),
 };
 const sspServerOptions = {
-  key: fs.readFileSync('/Users/kevinkiklee/certs/ssp.localhost-key.pem'),
-  cert: fs.readFileSync('/Users/kevinkiklee/certs/ssp.localhost.pem'),
+  key: fs.readFileSync(`${certPath}/ssp.localhost-key.pem`),
+  cert: fs.readFileSync(`${certPath}/ssp.localhost.pem`),
 };
 const trustedServerOptions = {
-  key: fs.readFileSync('/Users/kevinkiklee/certs/trusted-server.localhost-key.pem'),
-  cert: fs.readFileSync('/Users/kevinkiklee/certs/trusted-server.localhost.pem'),
+  key: fs.readFileSync(`${certPath}/trusted-server.localhost-key.pem`),
+  cert: fs.readFileSync(`${certPath}/trusted-server.localhost.pem`),
 };
 
 https.createServer(mainServerOptions, mainApp).listen(3000);
