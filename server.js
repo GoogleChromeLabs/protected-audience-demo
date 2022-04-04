@@ -4,15 +4,7 @@ const express = require('express');
 const vhost = require('vhost');
 const morgan = require('morgan');
 
-const mainApp = express();
-const advertiserApp = express();
-const publisherApp = express();
-const dspApp = express();
-const sspApp = express();
-const trusetedServerApp = express();
-
-mainApp.use(morgan('tiny'));
-
+// Setup HTTPS certificates
 const certPath = process.argv.slice(2)
 
 const mainServerOptions = {
@@ -40,6 +32,34 @@ const trustedServerOptions = {
   cert: fs.readFileSync(`${certPath}/trusted-server.localhost.pem`),
 };
 
+// Setup Express apps
+const mainApp = express();
+const advertiserApp = express();
+const publisherApp = express();
+const dspApp = express();
+const sspApp = express();
+const trusetedServerApp = express();
+
+// Add logging
+mainApp.use(morgan('tiny'));
+
+// Set FLEDGE header for DSP and SSP
+const setFledgeHeader = (req, res, next) => {
+  res.setHeader("X-Allow-FLEDGE", true);
+  next()
+}
+
+dspApp.use(setFledgeHeader)
+sspApp.use(setFledgeHeader)
+
+// Serve static files from a folder for each app
+advertiserApp.use(express.static('advertiser'));
+publisherApp.use(express.static('publisher'));
+dspApp.use(express.static('dsp'));
+sspApp.use(express.static('ssp'));
+trusetedServerApp.use(express.static('trusted-server'));
+
+// Setup HTTPS server for each app
 https.createServer(mainServerOptions, mainApp).listen(3000);
 https.createServer(advertiserServerOptions, advertiserApp).listen(3001);
 https.createServer(publisherServerOptions, publisherApp).listen(3002);
@@ -47,12 +67,7 @@ https.createServer(dspServerOptions, dspApp).listen(3003);
 https.createServer(sspServerOptions, sspApp).listen(3004);
 https.createServer(trustedServerOptions, trusetedServerApp).listen(3005);
 
-advertiserApp.use(express.static('advertiser'));
-publisherApp.use(express.static('publisher'));
-dspApp.use(express.static('dsp'));
-sspApp.use(express.static('ssp'));
-trusetedServerApp.use(express.static('trusted-server'));
-
+// Setup virtual host routing for each app
 mainApp.use(vhost('advertiser.localhost', advertiserApp));
 mainApp.use(vhost('publisher.localhost', publisherApp));
 mainApp.use(vhost('dsp.localhost', dspApp));

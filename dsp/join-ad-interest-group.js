@@ -6,10 +6,15 @@ const interestGroup = {
   name: "camping-tents",
   biddingLogicUrl: "https://dsp.localhost:3003/bid.js",
   dailyUpdateUrl: "https://dsp.localhost:3003/update.json",
-  trustedBiddingSignalsUrl: "https://dsp.localhost:3003",
-  trustedBiddingSignalsKeys: ["key1", "key2"],
+  // trustedBiddingSignalsUrl: "https://dsp.localhost:3003/signal.json",
+  trustedBiddingSignalsUrl: "https://dsp.localhost:3003/signal.json",
+  trustedBiddingSignalsKeys: ["key"],
   // userBiddingSignals: {...},
-  // ads: [bikeAd1, bikeAd2, bikeAd3],
+  ads: [
+    {
+      renderUrl: "https://dsp.localhost:3003/300x250.png",
+    },
+  ],
 };
-
+console.log({ interestGroup });
 navigator.joinAdInterestGroup(interestGroup, ONE_WEEK_IN_SECONDS);
