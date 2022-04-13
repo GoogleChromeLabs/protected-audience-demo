@@ -30,8 +30,14 @@ const runAuction = async () => {
     performance.measure('adRenderDuration', 'adRenderStart', 'adRenderEnd');
     performance.measure('adAuctionAndRenderDuration', 'adAuctionStart', 'adRenderEnd');
 
-    console.log('Marks', performance.getEntriesByType('mark'));
-    console.log('Measurements', performance.getEntriesByType('measure'));
+    const performanceMarks = performance.getEntriesByType('mark');
+    const performanceMeasures = performance.getEntriesByType('measure');
+
+    console.log('Marks', performanceMarks);
+    console.log('Measures', performanceMeasures);
+
+    navigator.sendBeacon('https://localhost:3004/performance/fledge-marks', JSON.stringify(performanceMarks));
+    navigator.sendBeacon('https://localhost:3004/performance/fledge-measures', JSON.stringify(performanceMeasures));
   };
 };
 
