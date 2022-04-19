@@ -1,0 +1,48 @@
+html {
+  /* height: fit-content; */
+  height: 100%;
+}
+
+.demo-explainer {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 25px;
+}
+
+.demo-title {
+  font-size: 20px;
+  font-weight: bold;
+  margin: 0 0 14px 0;
+}
+
+.demo-code-title {
+  font-size: 16px;
+  font-weight: bold;
+  margin: 0;
+}
+
+code {
+  display: block;
+  padding: 10px 20px;
+  margin: 10px;
+  background-color: #333;
+  color: #fefefe;
+  border-radius: 4px;
+}
+
+code p {
+  margin: 0;
+}
+
+.indented {
+  margin-left: 40px;
+}
+
+.inline-code {
+  background-color: white;
+  padding: 1px 4px;
+  border-radius: 4px;
+  border: 1px gray solid;
+  font-family: monospace;
+  color: darkred;
+}
