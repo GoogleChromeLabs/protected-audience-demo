@@ -34,6 +34,7 @@ mainApp.use(morgan('tiny'));
 
 // Set FLEDGE header for DSP and SSP
 const setFledgeHeader = (req, res, next) => {
+  res.setHeader('Supports-Loading-Mode', 'fenced-frame');
   res.setHeader('X-Allow-FLEDGE', true);
   next();
 };
