@@ -1,11 +1,7 @@
 {
-  "name": "f-demo",
+  "name": "fledge-demo",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
   "scripts": {
-    "start": "node ./server/server.js $CERT_PATH",
-    "dev": "nodemon --inspect ./server/server.js $CERT_PATH",
     "lint": "npx prettier --write ."
   },
   "author": "",
@@ -14,11 +10,7 @@
     "express": "^4.17.3",
     "express-handlebars": "^6.0.5",
     "firebase": "^9.7.0",
-    "firebase-admin": "^10.1.0",
     "firebase-functions": "^3.20.1",
-    "morgan": "^1.10.0",
-    "nodemon": "^2.0.15",
-    "prettier": "^2.6.2",
-    "vhost": "^3.0.2"
+    "prettier": "^2.6.2"
   }
 }
