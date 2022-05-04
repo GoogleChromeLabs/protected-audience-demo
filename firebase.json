@@ -1,0 +1,101 @@
+{
+  "hosting": [
+    {
+      "site": "fledge-demo",
+      "public": "sites/home",
+      "ignore": ["firebase.json", "**/.*", "**/node_modules/**"],
+      "rewrites": [
+        {
+          "source": "**",
+          "function": "home"
+        }
+      ]
+    },
+    {
+      "site": "fledge-demo-advertiser",
+      "public": "sites/advertiser",
+      "ignore": ["firebase.json", "**/.*", "**/node_modules/**"],
+      "rewrites": [
+        {
+          "source": "**",
+          "function": "advertiser"
+        },
+        {
+          "source": "/.well-known/**",
+          "function": "advertiser"
+        }
+      ]
+    },
+    {
+      "site": "fledge-demo-publisher",
+      "public": "sites/publisher",
+      "ignore": ["firebase.json", "**/.*", "**/node_modules/**"],
+      "rewrites": [
+        {
+          "source": "**",
+          "function": "publisher"
+        }
+      ]
+    },
+    {
+      "site": "fledge-demo-dsp",
+      "public": "sites/dsp",
+      "ignore": ["firebase.json", "**/.*", "**/node_modules/**"],
+      "rewrites": [
+        {
+          "source": "**",
+          "function": "dsp"
+        }
+      ],
+      "headers": [
+        {
+          "source": "**",
+          "headers": [
+            {
+              "key": "X-Allow-FLEDGE",
+              "value": "true"
+            },
+            {
+              "key": "Supports-Loading-Mode",
+              "value": "fenced-frame"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "site": "fledge-demo-ssp",
+      "public": "sites/ssp",
+      "ignore": ["firebase.json", "**/.*", "**/node_modules/**"],
+      "rewrites": [
+        {
+          "source": "**",
+          "function": "ssp"
+        }
+      ],
+      "headers": [
+        {
+          "source": "**",
+          "headers": [
+            {
+              "key": "X-Allow-FLEDGE",
+              "value": "true"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "emulators": {
+    "functions": {
+      "port": "5080"
+    },
+    "hosting": {
+      "host": "localhost",
+      "port": "8080"
+    },
+    "ui": {
+      "enabled": true
+    }
+  }
+}

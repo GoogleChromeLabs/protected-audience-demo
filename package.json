@@ -12,6 +12,10 @@
   "license": "ISC",
   "dependencies": {
     "express": "^4.17.3",
+    "express-handlebars": "^6.0.5",
+    "firebase": "^9.7.0",
+    "firebase-admin": "^10.1.0",
+    "firebase-functions": "^3.20.1",
     "morgan": "^1.10.0",
     "nodemon": "^2.0.15",
     "prettier": "^2.6.2",
