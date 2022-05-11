@@ -14,5 +14,14 @@
  * limitations under the License.
  */
 body {
-  margin: 50px;
+  font-family: 'Roboto', 'Helvetica', 'Arial', sans-serif;
+  width: 80vw;
+  margin: 2vh auto 0;
+  background-color: #f8f8f8;
+}
+
+#fledge-ad {
+  height: 250px;
+  width: 300px;
+  border: 1px solid black;
 }

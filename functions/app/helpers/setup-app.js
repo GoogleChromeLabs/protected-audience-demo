@@ -20,7 +20,7 @@ const hbs = require('express-handlebars');
 // Read the dev or prod URLs to be used
 require('dotenv').config({ path: `.env.${process.env.NODE_ENV}` });
 
-module.exports = (app, viewName) => {
+module.exports = (app, viewName, viewProps) => {
   // Setup view with Handlebars
   // Doc: https://handlebarsjs.com/guide/#block-helpers
   app.engine(
@@ -43,6 +43,7 @@ module.exports = (app, viewName) => {
       publisherUrl: PUBLISHER_URL,
       dspUrl: DSP_URL,
       sspUrl: SSP_URL,
+      ...viewProps,
     });
   });
 

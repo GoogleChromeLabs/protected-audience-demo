@@ -15,58 +15,17 @@
  */
 
 const ONE_WEEK_IN_SECONDS = 60 * 60 * 24 * 7;
-const getFavoriteColor = () => 'blue';
 
 const joinInterestGroup = async (dspUrl) => {
   const interestGroup = {
     owner: `${dspUrl}`,
-    name: 'camping-tents',
+    name: 'tv',
     biddingLogicUrl: `${dspUrl}/bid.js`,
-    dailyUpdateUrl: `${dspUrl}/update.json`,
-    // trustedBiddingSignalsUrl: `${dspUrl}/bidding-signal`,
-    // trustedBiddingSignalsKeys: ['remainingAdBudget'],
-    userBiddingSignals: {
-      favoriteColor: getFavoriteColor(),
-    },
     ads: [
       {
         renderUrl: `${dspUrl}/ads/default-ad.html`,
         metadata: {
           adName: 'default-ad',
-          allowControversial: true,
-          productColor: null,
-        },
-      },
-      {
-        renderUrl: `${dspUrl}/ads/summer-tent.html`,
-        metadata: {
-          adName: 'summer-tent',
-          allowControversial: false,
-          productColor: 'blue',
-        },
-      },
-      {
-        renderUrl: `${dspUrl}/ads/another-summer-tent.html`,
-        metadata: {
-          adName: 'another-summer-tent',
-          allowControversial: true,
-          productColor: 'blue',
-        },
-      },
-      {
-        renderUrl: `${dspUrl}/ads/winter-tent.html`,
-        metadata: {
-          adName: 'winter-tent',
-          allowControversial: false,
-          productColor: 'red',
-        },
-      },
-      {
-        renderUrl: `${dspUrl}/ads/winter-tent.html`,
-        metadata: {
-          adName: 'another-winter-tent',
-          allowControversial: true,
-          productColor: 'red',
         },
       },
     ],
