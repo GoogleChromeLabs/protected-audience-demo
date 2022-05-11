@@ -1,13 +1,30 @@
 <div class='demo-explainer'>
+  <h1>FLEDGE demo</h1>
+  <h2>!!! WORK-IN-PROGRESS !!!</h2>
+
+  <h3>Description</h3>
+  <p>
+    This demo represents the workflow involved with <a href="https://developer.chrome.com/docs/privacy-sandbox/fledge/" target="_blank">FLEDGE API</a> from the <a href="https://privacysandbox.com/intl/en_us/" target="_blank">Privacy Sandbox proposals</a>. This demo represents the barebone process is not a finished demo yet. Also, the demo only utilizes <a href="https://developer.chrome.com/docs/privacy-sandbox/fenced-frame/" target="_blank">fenced frames</a> for rendering <a href="https://github.com/WICG/fenced-frame/blob/master/explainer/opaque_src.md" target="_blank">opaque URLs</a>. 
+  </p>
+  <p>
+    The support for multiple DSPs, more realistic signals, iframe rendering, Prebid.js integration, and more will be added in the future.
+  </p>
+  <h3>Instructions</h3>
   <ol>
     <li>
+      <p>Start Chrome with the following flag</p>
+      <code>
+        --enable-features=InterestGroupStorage,AdInterestGroupAPI,Fledge,FencedFrames,PrivacySandboxAdsAPIsOverride
+      </code>
+    </li>
+    <li>
       Visit the
-      <a href='{{{advertiserUrl}}}'>advertiser page</a>. The advertiser page embeds DSP code that adds the interest
+      <a href='{{{advertiserUrl}}}' target="_blank">advertiser page</a>. The advertiser page embeds DSP code that adds the interest
       group for you. Check in DevTools under the Applications tab to check the interest group.
     </li>
     <li>
       Visit the
-      <a href='{{{publisherUrl}}}'>publisher page</a>. The publisher page injects SSP code that starts the auction
+      <a href='{{{publisherUrl}}}' target="_blank">publisher page</a>. The publisher page injects SSP code that starts the auction
       process. During the auction, each DSP in the ad interest group will make a bid for the ad slot. The SSP code will
       score each ad from DSP, and choose the winning ad to be rendered on the page.
     </li>

@@ -15,12 +15,6 @@
  */
 
 body {
-  box-sizing: content-box;
-  width: 300px;
-  height: 250px;
-}
-
-#ad {
-  padding: 25px;
-  border: 1px black solid;
+  margin: 0;
+  padding: 0;
 }
