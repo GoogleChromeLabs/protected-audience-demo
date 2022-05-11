@@ -27,8 +27,8 @@ const joinInterestGroup = async (dspUrl) => {
         metadata: {
           adName: 'default-ad',
         },
-      }
-    ]
+      },
+    ],
   };
 
   navigator.joinAdInterestGroup(interestGroup, ONE_WEEK_IN_SECONDS);

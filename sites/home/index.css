@@ -29,13 +29,17 @@
  * limitations under the License.
  */
 body {
-  font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+  font-family: 'Roboto', 'Helvetica', 'Arial', sans-serif;
   width: 80vw;
   margin: 2vh auto 0;
   background-color: #f8f8f8;
 }
 
-h1, h2, h3, h4, h5 {
+h1,
+h2,
+h3,
+h4,
+h5 {
   margin: 25px 0 10px 0;
   padding: 0;
   zoom: 60%;
@@ -48,10 +52,10 @@ p {
   font-size: 1em;
 }
 
-a, a:visited {
+a,
+a:visited {
   color: blue;
 }
-
 
 code {
   background-color: white;

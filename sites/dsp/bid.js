@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 function generateBid(interestGroup, auctionSignals, perBuyerSignals, trustedBiddingSignals, browserSignals) {
-  const [testAd] = interestGroup.ads
+  const [testAd] = interestGroup.ads;
 
   return {
     bid: 1, // Arbitrary bid value

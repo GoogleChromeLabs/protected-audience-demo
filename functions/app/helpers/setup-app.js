@@ -43,7 +43,7 @@ module.exports = (app, viewName, viewProps) => {
       publisherUrl: PUBLISHER_URL,
       dspUrl: DSP_URL,
       sspUrl: SSP_URL,
-      ...viewProps
+      ...viewProps,
     });
   });
 
