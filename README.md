@@ -1,6 +1,43 @@
 # FLEDGE demo (!!! WORK-IN-PROGRESS !!!)
 
-This demo implements [FLEDGE API](https://developer.chrome.com/blog/fledge-api/)
+## Introduction
+
+This demo shows the simple usage of [FLEDGE API](https://developer.chrome.com/blog/fledge-api/). In this demo, there are 4 actors involved in the process: advertiser, publisher, DSP, and SSP. Each actors interact with one another to render a retargeted ads to the user. 
+
+## Files
+
+### Core FLEDGE logic
+
+These are the files involved with the core FLEDGE logic:
+
+* [`/functions/view/advertiser/index.hbs`](asda) - Advertiser page that embeds an iframe from a DSP.
+* [`/functions/view/publisher/index.hbs`](asda) - Publisher page with SSP code that runs an auction and renders the ad.
+* [`/sites/dsp/join-ad-interest-group.js`](asda) - DSP resource that adds an interest group for the user.
+* [`/sites/dsp/bid.js`](asda) - DSP resource that contains the bidding logic for the auction.
+* [`/sites/ssp/run-auction.js`](asda) - SSP resource that executes the in-browser auction.
+* [`/sites/ssp/decision-logic.js`](asda) - SSP resource that decides the winner among the bidders.
+
+### Folder description
+
+* `/functions/app` contains the Firebase function code. Express is used to respond to the requests.
+* 
+## Hostnames
+
+### Production
+
+- Main - https://fledge-demo.web.app/
+- Advertiser - https://fledge-demo-advertiser.web.app/
+- Publisher- https://fledge-demo-publisher.web.app/
+- DSP - https://fledge-demo-dsp.web.app/
+- SSP - https://fledge-demo-ssp.web.app/
+
+### Local
+
+- Main - http://localhost:8080
+- Advertiser - http://localhost:8085
+- Publisher - http://localhost:8086
+- DSP - https://localhost:4437 (via nginx reverse proxy from 8087 to 4437)
+- SSP - https://localhost:4438 (via nginx reverse proxy from 8088 to 4438)
 
 ## Setup
 
@@ -92,27 +129,12 @@ And visit `http://localhost:8080` for the main page
 
 ### Deploy code
 
+(Ignore this section if you are just playing around with the demo)
+
 ```
 npm run deploy
 ```
 
-## Hostnames
-
-### Production
-
-- Main - https://fledge-demo.web.app/
-- Advertiser - https://fledge-demo-advertiser.web.app/
-- Publisher- https://fledge-demo-publisher.web.app/
-- DSP - https://fledge-demo-dsp.web.app/
-- SSP - https://fledge-demo-ssp.web.app/
-
-### Local
-
-- Main - http://localhost:8080
-- Advertiser - http://localhost:8085
-- Publisher - http://localhost:8086
-- DSP - https://localhost:4437
-- SSP - https://localhost:4438
 
 ## Tasks
 
