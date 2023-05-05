@@ -13,18 +13,6 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
-const sendMeasurements = (sspUrl) => {
-  const performanceMarks = performance.getEntriesByType('mark');
-  const performanceMeasures = performance.getEntriesByType('measure');
-
-  console.log('Marks', performanceMarks);
-  console.log('Measures', performanceMeasures);
-
-  navigator.sendBeacon(`${sspUrl}/performance/fledge-marks`, JSON.stringify(performanceMarks));
-  navigator.sendBeacon(`${sspUrl}/performance/fledge-measures`, JSON.stringify(performanceMeasures));
-};
-
 const runAuction = async (sspUrl, dspUrl) => {
   const auctionConfig = {
     seller: `${sspUrl}`,
@@ -44,23 +32,9 @@ const runAuction = async (sspUrl, dspUrl) => {
   console.log('auctionConfig = ', JSON.stringify(auctionConfig));
 
   // Run ad auction
-  performance.mark('adAuctionStart');
-  const opaqueUrl = await navigator.runAdAuction(auctionConfig);
-  console.log('opaqueUrl = ', opaqueUrl);
-  performance.mark('adAuctionEnd');
-  performance.measure('adAuctionDuration', 'adAuctionStart', 'adAuctionEnd');
+  const opaqueURN = await navigator.runAdAuction(auctionConfig);
 
   // Render ad
-  performance.mark('adRenderStart');
-  const iframeEl = document.getElementById('fledge-ad');
-  iframeEl.src = opaqueUrl;
-  iframeEl.onload = () => {
-    performance.mark('adRenderEnd');
-    performance.measure('adRenderDuration', 'adRenderStart', 'adRenderEnd');
-    performance.measure('adAuctionAndRenderDuration', 'adAuctionStart', 'adRenderEnd');
-
-    sendMeasurements(sspUrl);
-  };
+  const frame = document.getElementById('fledge-ad');
+  frame.src = opaqueURN;
 };
-
-// runAuction();

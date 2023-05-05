@@ -35,7 +35,7 @@ module.exports = (app, viewName, viewProps) => {
 
   // Setup root route
   app.get('/', (req, res) => {
-    const { DEMO_HOME_URL, ADVERTISER_URL, PUBLISHER_URL, DSP_URL, SSP_URL } = process.env;
+    const { DEMO_HOME_URL, ADVERTISER_URL, PUBLISHER_URL, DSP_URL, SSP_URL, ADTECH_URL } = process.env;
 
     res.render('index', {
       demoHomeUrl: DEMO_HOME_URL,
@@ -43,6 +43,7 @@ module.exports = (app, viewName, viewProps) => {
       publisherUrl: PUBLISHER_URL,
       dspUrl: DSP_URL,
       sspUrl: SSP_URL,
+      adtechUrl: ADTECH_URL,
       ...viewProps,
     });
   });

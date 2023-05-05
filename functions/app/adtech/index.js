@@ -17,13 +17,6 @@ const express = require('express');
 const functions = require('firebase-functions');
 const setupApp = require('../helpers/setup-app');
 
-const app = setupApp(express(), 'dsp');
+const app = setupApp(express(), 'adtech');
 
-app.get('/.well-known/interest-group/permissions', (req, res) => {
-  res.json({
-    joinAdInterestGroup: true,
-    leaveAdInterestGroup: true,
-  });
-});
-
-exports.dsp = functions.https.onRequest(app);
+exports.adtech = functions.https.onRequest(app);

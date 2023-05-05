@@ -45,6 +45,10 @@
         {
           "source": "**",
           "function": "dsp"
+        },
+        {
+          "source": "/.well-known/**",
+          "function": "dsp"
         }
       ],
       "headers": [
@@ -84,6 +88,32 @@
           ]
         }
       ]
+    },
+    {
+      "site": "fledge-demo-adtech",
+      "public": "sites/adtech",
+      "ignore": ["firebase.json", "**/.*", "**/node_modules/**"],
+      "rewrites": [
+        {
+          "source": "**",
+          "function": "adtech"
+        }
+      ],
+      "headers": [
+        {
+          "source": "**",
+          "headers": [
+            {
+              "key": "X-Allow-FLEDGE",
+              "value": "true"
+            },
+            {
+              "key": "Supports-Loading-Mode",
+              "value": "fenced-frame"
+            }
+          ]
+        }
+      ]
     }
   ],
   "emulators": {
@@ -92,7 +122,7 @@
     },
     "hosting": {
       "host": "localhost",
-      "port": "8080"
+      "port": "3000"
     },
     "ui": {
       "enabled": true

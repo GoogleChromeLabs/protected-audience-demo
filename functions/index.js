@@ -18,9 +18,11 @@ const advertiser = require('./app/advertiser');
 const publisher = require('./app/publisher');
 const dsp = require('./app/dsp');
 const ssp = require('./app/ssp');
+const adtech = require('./app/adtech');
 
 exports.home = home.home;
 exports.advertiser = advertiser.advertiser;
 exports.publisher = publisher.publisher;
 exports.dsp = dsp.dsp;
 exports.ssp = ssp.ssp;
+exports.adtech = adtech.adtech;
