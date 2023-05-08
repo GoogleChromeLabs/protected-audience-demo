@@ -15,9 +15,12 @@
  */
 const express = require('express');
 const functions = require('firebase-functions');
+const cors = require('cors');
 const setupApp = require('../helpers/setup-app');
 
 const app = setupApp(express(), 'dsp');
+
+app.use(cors());
 
 app.get('/.well-known/interest-group/permissions', (req, res) => {
   res.json({
