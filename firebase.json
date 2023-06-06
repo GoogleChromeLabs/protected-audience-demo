@@ -35,6 +35,17 @@
           "source": "**",
           "function": "publisher"
         }
+      ],
+      "headers": [
+        {
+          "source": "**",
+          "headers": [
+            {
+              "key": "Permissions-Policy",
+              "value": "fullscreen=(self \"https://localhost:4438\" \"https://fledge-demo-ssp.web.app\")"
+            }
+          ]
+        }
       ]
     },
     {

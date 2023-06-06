@@ -1,0 +1,9 @@
+<p>iframe from {{{sspUrl}}}</p>
+<button id="fullscreen_button">From iframe - go full screen</button>
+<script>
+  document.querySelector('#fullscreen_button').addEventListener('click', () => {
+    document.querySelector('body').requestFullscreen();
+  })
+</script>
+
+<iframe allow="fullscreen" src="{{{adtechUrl}}}/permissions-test"></iframe>

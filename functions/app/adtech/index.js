@@ -19,4 +19,17 @@ const setupApp = require('../helpers/setup-app');
 
 const app = setupApp(express(), 'adtech');
 
+app.get('/permissions-test', (req, res) => {
+  const { DEMO_HOME_URL, ADVERTISER_URL, PUBLISHER_URL, DSP_URL, SSP_URL, ADTECH_URL } = process.env;
+
+  res.render('permissions-test', {
+    demoHomeUrl: DEMO_HOME_URL,
+    advertiserUrl: ADVERTISER_URL,
+    publisherUrl: PUBLISHER_URL,
+    dspUrl: DSP_URL,
+    sspUrl: SSP_URL,
+    adtechUrl: ADTECH_URL,
+  });
+});
+
 exports.adtech = functions.https.onRequest(app);
