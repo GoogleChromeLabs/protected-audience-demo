@@ -14,6 +14,8 @@
  * limitations under the License.
  */
 const runAuction = async (sspUrl, dspUrl) => {
+  const resolveToConfig = typeof window.FencedFrameConfig !== 'undefined';
+
   const auctionConfig = {
     seller: `${sspUrl}`,
     decisionLogicUrl: `${sspUrl}/decision-logic.js`,
@@ -27,14 +29,20 @@ const runAuction = async (sspUrl, dspUrl) => {
     perBuyerTimeouts: {
       '*': 50,
     },
+    resolveToConfig
   };
 
   console.log('auctionConfig = ', JSON.stringify(auctionConfig));
 
   // Run ad auction
-  const opaqueURN = await navigator.runAdAuction(auctionConfig);
+  const selectedAd = await navigator.runAdAuction(auctionConfig);
 
   // Render ad
   const frame = document.getElementById('fledge-ad');
-  frame.src = opaqueURN;
+
+  if (resolveToConfig && selectedAd instanceof FencedFrameConfig) {
+    frame.config = selectedAd;
+  } else {
+    frame.src = selectedAd;
+  }
 };
