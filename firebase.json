@@ -125,6 +125,26 @@
           ]
         }
       ]
+    },
+    {
+      "site": "fledge-demo",
+      "redirects": [
+        {
+          "source": "**",
+          "destination": "https://protected-audience-demo.web.app",
+          "type": 301
+        }
+      ]
+    },
+    {
+      "site": "paapi-demo",
+      "redirects": [
+        {
+          "source": "**",
+          "destination": "https://protected-audience-demo.web.app",
+          "type": 301
+        }
+      ]
     }
   ],
   "emulators": {
