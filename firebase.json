@@ -1,7 +1,7 @@
 {
   "hosting": [
     {
-      "site": "fledge-demo",
+      "site": "protected-audience-demo",
       "public": "sites/home",
       "ignore": ["firebase.json", "**/.*", "**/node_modules/**"],
       "rewrites": [
@@ -12,7 +12,7 @@
       ]
     },
     {
-      "site": "fledge-demo-advertiser",
+      "site": "protected-audience-demo-advertiser",
       "public": "sites/advertiser",
       "ignore": ["firebase.json", "**/.*", "**/node_modules/**"],
       "rewrites": [
@@ -27,7 +27,7 @@
       ]
     },
     {
-      "site": "fledge-demo-publisher",
+      "site": "protected-audience-demo-publisher",
       "public": "sites/publisher",
       "ignore": ["firebase.json", "**/.*", "**/node_modules/**"],
       "rewrites": [
@@ -42,14 +42,14 @@
           "headers": [
             {
               "key": "Permissions-Policy",
-              "value": "fullscreen=(self \"https://localhost:4438\" \"https://fledge-demo-ssp.web.app\")"
+              "value": "fullscreen=(self \"https://localhost:4438\" \"https://protected-audience-demo-ssp.web.app\")"
             }
           ]
         }
       ]
     },
     {
-      "site": "fledge-demo-dsp",
+      "site": "protected-audience-demo-dsp",
       "public": "sites/dsp",
       "ignore": ["firebase.json", "**/.*", "**/node_modules/**"],
       "rewrites": [
@@ -79,7 +79,7 @@
       ]
     },
     {
-      "site": "fledge-demo-ssp",
+      "site": "protected-audience-demo-ssp",
       "public": "sites/ssp",
       "ignore": ["firebase.json", "**/.*", "**/node_modules/**"],
       "rewrites": [
@@ -101,7 +101,7 @@
       ]
     },
     {
-      "site": "fledge-demo-adtech",
+      "site": "protected-audience-demo-adtech",
       "public": "sites/adtech",
       "ignore": ["firebase.json", "**/.*", "**/node_modules/**"],
       "rewrites": [

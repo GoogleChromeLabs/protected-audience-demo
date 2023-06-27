@@ -38,7 +38,7 @@ const runAuction = async (sspUrl, dspUrl) => {
   const selectedAd = await navigator.runAdAuction(auctionConfig);
 
   // Render ad
-  const frame = document.getElementById('fledge-ad');
+  const frame = document.getElementById('protected-audience-ad');
 
   if (resolveToConfig && selectedAd instanceof FencedFrameConfig) {
     frame.config = selectedAd;

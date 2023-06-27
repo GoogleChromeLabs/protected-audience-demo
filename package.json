@@ -1,5 +1,5 @@
 {
-  "name": "fledge-demo",
+  "name": "protected-audience-demo",
   "version": "1.0.0",
   "scripts": {
     "dev": "npm run kill-8080 && firebase emulators:start",
