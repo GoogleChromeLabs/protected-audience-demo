@@ -19,9 +19,9 @@ function generateBid(interestGroup, auctionSignals, perBuyerSignals, trustedBidd
   return {
     bid: 1, // Arbitrary bid value
     ad: {
-      adName: testAd.metadata.adName,
+      adName: testAd?.metadata?.adName,
     },
-    render: testAd.renderUrl,
+    render: testAd?.renderUrl,
   };
 }
 
