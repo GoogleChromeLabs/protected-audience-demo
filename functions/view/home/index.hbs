@@ -10,6 +10,12 @@
       If you are using Chrome M118+, execute Chrome from the command line and set the flag <code>--args --disable-features=EnforcePrivacySandboxAttestations</code> to disable attestation.
     </li>
     <li>
+      If you are using Chrome M122, execute Chrome from the command line and set the flag <code>--args --disable-features=FledgeEnforceKAnonymity</code> to disable k-anonymity check
+    </li>
+    <li>
+      Disabling attestation and the k-anonymity check can be combined to a single command: <code>--disable-features=EnforcePrivacySandboxAttestations,FledgeEnforceKAnonymity</code>
+    </li>
+    <li>
       Visit the
       <a href='{{{advertiserUrl}}}' target='_blank'>advertiser page</a> which will add your browser to an interest group.
     </li>
