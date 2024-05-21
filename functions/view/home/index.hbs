@@ -1,20 +1,20 @@
 <div class='demo-explainer'>
   <h1>Protected Audience Demo</h1>
 
-  <h3>Instructions</h3>
-  <ol>
+  <h3>Setup</h3>
+  <h4>Before Chrome M127</h4>
+    <li>
+      Execute Chrome from the command line and set the flag <code>--disable-features=EnforcePrivacySandboxAttestations,FledgeEnforceKAnonymity</code> to disable attestation and k-anonymity checks
+    </li>
     <li>
       Visit the <code>chrome://flags</code> page and enable the "Privacy Sandbox Ads APIs" flags from the UI.
     </li>
+  <h4>After Chrome M127</h4>
     <li>
-      If you are using Chrome M118+, execute Chrome from the command line and set the flag <code>--args --disable-features=EnforcePrivacySandboxAttestations</code> to disable attestation.
+      Execute Chrome from the command line and set the flag <code>--enable-privacy-sandbox-ads-apis --disable-features=EnforcePrivacySandboxAttestations,FledgeEnforceKAnonymity</code>
     </li>
-    <li>
-      If you are using Chrome M122, execute Chrome from the command line and set the flag <code>--args --disable-features=FledgeEnforceKAnonymity</code> to disable k-anonymity check
-    </li>
-    <li>
-      Disabling attestation and the k-anonymity check can be combined to a single command: <code>--disable-features=EnforcePrivacySandboxAttestations,FledgeEnforceKAnonymity</code>
-    </li>
+  <h3>Instructions</h3>
+  <ol>
     <li>
       Visit the
       <a href='{{{advertiserUrl}}}' target='_blank'>advertiser page</a> which will add your browser to an interest group.
