@@ -18,7 +18,7 @@ const runAuction = async (sspUrl, dspUrl) => {
 
   const auctionConfig = {
     seller: `${sspUrl}`,
-    decisionLogicUrl: `${sspUrl}/decision-logic.js`,
+    decisionLogicURL: `${sspUrl}/decision-logic.js`,
     interestGroupBuyers: [dspUrl],
     auctionSignals: { isControversial: true },
     sellerSignals: { key: 'value' },
