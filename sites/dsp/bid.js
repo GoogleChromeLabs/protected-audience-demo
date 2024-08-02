@@ -21,7 +21,7 @@ function generateBid(interestGroup, auctionSignals, perBuyerSignals, trustedBidd
     ad: {
       adName: testAd?.metadata?.adName,
     },
-    render: testAd?.renderUrl,
+    render: testAd?.renderURL,
   };
 }
 

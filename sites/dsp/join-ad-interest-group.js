@@ -23,7 +23,7 @@ const joinInterestGroup = async (dspUrl) => {
     biddingLogicUrl: `${dspUrl}/bid.js`,
     ads: [
       {
-        renderUrl: `${dspUrl}/ads/default-ad.html`,
+        renderURL: `${dspUrl}/ads/default-ad.html`,
         metadata: {
           adName: 'default-ad',
         },
