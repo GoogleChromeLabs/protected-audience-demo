@@ -29,7 +29,7 @@ const runAuction = async (sspUrl, dspUrl) => {
     perBuyerTimeouts: {
       '*': 50,
     },
-    resolveToConfig
+    resolveToConfig,
   };
 
   console.log('auctionConfig = ', JSON.stringify(auctionConfig));
