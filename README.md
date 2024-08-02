@@ -2,7 +2,7 @@
 
 ## Introduction
 
-This demo shows the simple usage of the [Protected Audience API](https://developer.chrome.com/blog/fledge-api/). In this demo, there are 4 actors involved in the process: advertiser, publisher, DSP, and SSP. Each actors interact with one another to render a retargeted ads to the user. 
+This demo shows the simple usage of the [Protected Audience API](https://developer.chrome.com/blog/fledge-api/). In this demo, there are 4 actors involved in the process: advertiser, publisher, DSP, and SSP. Each actors interact with one another to render a retargeted ads to the user.
 
 ## Local development
 
@@ -95,10 +95,10 @@ npm run deploy
 
 ## Key files
 
-* Buyer's interest group logic - [`/sites/dsp/join-ad-interest-group.js`](https://github.com/GoogleChromeLabs/protected-audience-demo/blob/main/sites/dsp/join-ad-interest-group.js) - DSP resource that adds an interest group for the user.
-* Buyer's bidding logic - [`/sites/dsp/bid.js`](https://github.com/GoogleChromeLabs/protected-audience-demo/blob/main/sites/dsp/bid.js) - DSP resource that contains the bidding logic for the auction.
-* Seller's auction logic - [`/sites/ssp/run-auction.js`](https://github.com/GoogleChromeLabs/protected-audience-demo/blob/main/sites/ssp/run-auction.js) - SSP resource that executes the in-browser auction.
-* Seller's decision logic - [`/sites/ssp/decision-logic.js`](https://github.com/GoogleChromeLabs/protected-audience-demo/blob/main/sites/ssp/decision-logic.js) - SSP resource that decides the winner among the bidders.
+- Buyer's interest group logic - [`/sites/dsp/join-ad-interest-group.js`](https://github.com/GoogleChromeLabs/protected-audience-demo/blob/main/sites/dsp/join-ad-interest-group.js) - DSP resource that adds an interest group for the user.
+- Buyer's bidding logic - [`/sites/dsp/bid.js`](https://github.com/GoogleChromeLabs/protected-audience-demo/blob/main/sites/dsp/bid.js) - DSP resource that contains the bidding logic for the auction.
+- Seller's auction logic - [`/sites/ssp/run-auction.js`](https://github.com/GoogleChromeLabs/protected-audience-demo/blob/main/sites/ssp/run-auction.js) - SSP resource that executes the in-browser auction.
+- Seller's decision logic - [`/sites/ssp/decision-logic.js`](https://github.com/GoogleChromeLabs/protected-audience-demo/blob/main/sites/ssp/decision-logic.js) - SSP resource that decides the winner among the bidders.
 
 ## Hostnames
 
