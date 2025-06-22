@@ -3,24 +3,31 @@
 
   <h3>Setup</h3>
   <h4>Before Chrome M127</h4>
-    <li>
-      Execute Chrome from the command line and set the flag <code>--disable-features=EnforcePrivacySandboxAttestations,FledgeEnforceKAnonymity</code> to disable attestation and k-anonymity checks
-    </li>
-    <li>
-      Visit the <code>chrome://flags</code> page and enable the "Privacy Sandbox Ads APIs" flags from the UI.
-    </li>
+  <li>
+    Execute Chrome from the command line and set the flag
+    <code>--disable-features=EnforcePrivacySandboxAttestations,FledgeEnforceKAnonymity</code>
+    to disable attestation and k-anonymity checks
+  </li>
+  <li>
+    Visit the
+    <code>chrome://flags</code>
+    page and enable the "Privacy Sandbox Ads APIs" flags from the UI.
+  </li>
   <h4>After Chrome M127</h4>
-    <li>
-      Execute Chrome from the command line and set the flag <code>--enable-privacy-sandbox-ads-apis --disable-features=EnforcePrivacySandboxAttestations,FledgeEnforceKAnonymity</code>
-    </li>
+  <li>
+    Execute Chrome from the command line and set the flag
+    <code>--enable-privacy-sandbox-ads-apis --disable-features=EnforcePrivacySandboxAttestations,FledgeEnforceKAnonymity</code>
+  </li>
   <h3>Instructions</h3>
   <ol>
     <li>
       Visit the
-      <a href='{{{advertiserUrl}}}' target='_blank'>advertiser page</a> which will add your browser to an interest group.
+      <a href='{{{advertiserUrl}}}' target='_blank'>advertiser page</a>
+      which will add your browser to an interest group.
     </li>
     <li>
       Visit the
-      <a href='{{{publisherUrl}}}' target='_blank'>publisher page</a> to see the ad rendered in a fenced frame.</li>
+      <a href='{{{publisherUrl}}}' target='_blank'>publisher page</a>
+      to see the ad rendered in a fenced frame.</li>
   </ol>
 </div>
