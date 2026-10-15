@@ -1,3 +1,11 @@
+<p><b>No longer maintained</b>.</p>
+
+<p>Please see our <a href="https://privacysandbox.google.com/blog/update-on-plans-for-privacy-sandbox-technologies">Update on Plans for Privacy Sandbox Technologies</a> and <a href="https://privacysandbox.google.com/overview/status">Privacy Sandbox feature status</a> for more information about the status of individual APIs and platform features.</p>
+
+<p>As the Protected Audience API has been phased out, this demo is no longer supported or maintained.</p>
+
+<br>
+
 # Protected Audience demo
 
 ## Introduction
@@ -101,14 +109,6 @@ npm run deploy
 * Seller's decision logic - [`/sites/ssp/decision-logic.js`](https://github.com/GoogleChromeLabs/protected-audience-demo/blob/main/sites/ssp/decision-logic.js) - SSP resource that decides the winner among the bidders.
 
 ## Hostnames
-
-### Production
-
-- Main - https://protected-audience-demo.web.app/
-- Advertiser - https://protected-audience-demo-advertiser.web.app/
-- Publisher- https://protected-audience-demo-publisher.web.app/
-- DSP - https://protected-audience-demo-dsp.web.app/
-- SSP - https://protected-audience-demo-ssp.web.app/
 
 ### Local
 
